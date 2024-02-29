@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Calculator</title>
+    <style>
+      #input1 {
+        height: 30px;
+        width: 15%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      #input2 {
+        height: 30px;
+        width: 15%;
+        margin-left: 15px;
+      }
+      #item button {
+        margin: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="input1" type="number" placeholder="enter 1st Number" />
+    <input id="input2" type="number" placeholder="enter 2nd Number" />
+
+    <div id="item">
+      <button
+        style="height: 30px; background-color: red; margin-left: 10px"
+        onclick="add()"
+      >
+        Add
+      </button>
+      <button style="height: 30px; background-color: red" onclick="subtract()">
+        Subtract
+      </button>
+      <button style="height: 30px; background-color: red" onclick="multiply()">
+        Multiply
+      </button>
+      <button style="height: 30px; background-color: red" onclick="divide()">
+        Divide
+      </button>
+    </div>
+  </body>
+</html>
+<script>
+  function add() {
+    var num1 = parseFloat(document.getElementById("input1").value);
+    var num2 = parseFloat(document.getElementById("input2").value);
+    var result = num1 + num2;
+    console.log(result);
+    alert("Result:" + result);
+  }
+
+  function subtract() {
+    var num1 = parseFloat(document.getElementById("input1").value);
+    var num2 = parseFloat(document.getElementById("input2").value);
+    var result = num1 - num2;
+    console.log(result);
+    alert("Result: " + result);
+  }
+
+  function divide() {
+    var num1 = parseFloat(document.getElementById("input1").value);
+    var num2 = parseFloat(document.getElementById("input2").value);
+    if (num2 === 0) {
+      alert("Cannot divide by zero!");
+      return;
+    }
+    var result = num1 / num2;
+    console.log(result);
+    alert("Result: " + result);
+  }
+
+  function multiply() {
+    var num1 = parseFloat(document.getElementById("input1").value);
+    var num2 = parseFloat(document.getElementById("input2").value);
+    var result = num1 * num2;
+    console.log(result);
+    alert("Result: " + result);
+  }
+</script>
